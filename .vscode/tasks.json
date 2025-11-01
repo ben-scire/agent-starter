@@ -1,0 +1,9 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      { "label": "uv sync", "type": "shell", "command": "pip install -e .", "group": "build" },
+      { "label": "ruff", "type": "shell", "command": "ruff check --fix ." },
+      { "label": "tests", "type": "shell", "command": "pytest -q" },
+      { "label": "run api", "type": "shell", "command": "uvicorn api.main:app --reload --port 8000" }
+    ]
+  }

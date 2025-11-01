@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "API (Uvicorn reload)",
+        "type": "python",
+        "request": "launch",
+        "module": "uvicorn",
+        "args": ["api.main:app", "--reload", "--port", "8000"],
+        "jinja": true,
+        "cwd": "${workspaceFolder}",
+        "envFile": "${workspaceFolder}/.env"
+      },
+      {
+        "name": "Pytest",
+        "type": "python",
+        "request": "launch",
+        "module": "pytest",
+        "args": ["-q"],
+        "cwd": "${workspaceFolder}"
+      }
+    ]
+  }
