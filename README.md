@@ -34,7 +34,7 @@ It includes:
 
 ---
 <p align="center">
-  <img src="assets/agent_loop_diagram.jpg" alt="Sense → Plan → Act → Reflect loop" width="700"/>
+  <img src="agent_loop_diagram.jpg" alt="Sense → Plan → Act → Reflect loop" width="700"/>
   <br><sub><em>Autonomous loop: Sense → Plan → Act → Reflect</em></sub>
 </p>
 
