@@ -1,4 +1,5 @@
-# tests/test_agent.py
+"""Smoke tests for the agent loop without external services."""
+
 from __future__ import annotations
 
 from agent_starter.core.agent import SingleAgent

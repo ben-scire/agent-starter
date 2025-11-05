@@ -1,6 +1,5 @@
-# =========================
-# src/agent_starter/core/schemas.py
-# =========================
+"""Typed Pydantic models shared across the agent core."""
+
 from typing import Any, Literal
 
 from pydantic import BaseModel, Field

@@ -1,6 +1,4 @@
-# =========================
-# src/agent_starter/core/memory.py
-# =========================
+"""Small FIFO buffer for short-lived conversational context."""
 
 
 class ShortTermMemory:

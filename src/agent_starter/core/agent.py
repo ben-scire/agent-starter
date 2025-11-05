@@ -1,7 +1,9 @@
-# src/agent_starter/core/agent.py
+"""Core agent orchestration primitives."""
+
 from __future__ import annotations
 
 import json
+import re
 
 from agent_starter.tools.web import FetchArgs, WebTools
 
@@ -50,29 +52,23 @@ class SingleAgent:
         raw = self.llm.chat(
             self._messages(user_input, scratch=prompt), temperature=0.1, max_tokens=300
         )
+        fallback = {
+            "steps": ["draft answer"],
+            "requires_tool": False,
+            "tool_name": None,
+            "tool_args": {},
+        }
         try:
             obj = json.loads(raw)
         except Exception:
-            # Try to extract JSON from the response if it's embedded in text
-            import re
             json_match = re.search(r'\{.*\}', raw, re.DOTALL)
             if json_match:
                 try:
                     obj = json.loads(json_match.group())
                 except Exception:
-                    obj = {
-                        "steps": ["draft answer"],
-                        "requires_tool": False,
-                        "tool_name": None,
-                        "tool_args": {},
-                    }
+                    obj = fallback
             else:
-                obj = {
-                    "steps": ["draft answer"],
-                    "requires_tool": False,
-                    "tool_name": None,
-                    "tool_args": {},
-                }
+                obj = fallback
         return Plan(**obj)
 
     # ----- act -----

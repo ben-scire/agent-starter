@@ -1,4 +1,5 @@
-# src/agent_starter/core/llm.py
+"""Lightweight HTTP client for the configured language model."""
+
 from __future__ import annotations
 
 import os
@@ -13,7 +14,7 @@ class LLM:
         self.base_url = base_url or os.getenv("LLM_BASE_URL", "172.17.128.1:11434")
 
     def chat(self, messages: list[dict], temperature: float = 0.2, max_tokens: int = 512) -> str:
-        if self.provider == "ollama":  # spell checker was whining here
+        if self.provider == "ollama":
             r = requests.post(
                 f"{self.base_url}/api/chat",
                 json={
