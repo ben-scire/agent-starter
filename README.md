@@ -129,15 +129,15 @@ Add new tools (filesystem, browser automation, crypto APIs, etc.) and plug them 
 
 </div>
 
-Most “agent frameworks” hide behind APIs and paywalls.
-This one runs *entirely local*, letting you:
+Many agent frameworks rely on hosted APIs and paywalls.
+This project runs *entirely local*, letting you:
 
 * Inspect every request and response
 * Prototype new agent behaviors
 * Benchmark real LLM latency on-device
 * Run safely offline
 
-It’s built for engineers who want transparency and total control over their agents.
+It is built for engineers who want transparency and control over their agents.
 
 ---
 

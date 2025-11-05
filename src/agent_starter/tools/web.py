@@ -1,4 +1,5 @@
-# src/agent_starter/tools/web.py
+"""Minimal HTTP fetch helper used by the agent tool interface."""
+
 from __future__ import annotations
 
 import re
@@ -29,7 +30,7 @@ class WebTools:
         r.raise_for_status()
         text = r.text
 
-        # Brutal, dependency-free scrub: strip script/style blocks and collapse spaces
+        # Dependency-free scrub: strip script/style blocks and collapse spaces
         text = re.sub(r"(?is)<script.*?>.*?</script>", " ", text)
         text = re.sub(r"(?is)<style.*?>.*?</style>", " ", text)
         text = re.sub(r"(?is)<[^>]+>", " ", text)
